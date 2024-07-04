@@ -1,2 +1,2 @@
 # ELECHOUSE_CC1101
-CC1101 arduino library for esp microcontrollers
+A CC1101 library fork based on LSatan's [SmartRC-CC1101-Driver-Lib](https://github.com/LSatan/SmartRC-CC1101-Driver-Lib)
