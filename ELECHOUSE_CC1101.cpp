@@ -442,6 +442,15 @@ bool ELECHOUSE_CC1101::getCC1101() {
   }
 }
 /****************************************************************
+*FUNCTION NAME:getFrequency
+*FUNCTION     :Return the frequency.
+*INPUT        :none
+*OUTPUT       :none
+****************************************************************/
+float ELECHOUSE_CC1101::getFrequency() {
+  return this->frequency;
+}
+/****************************************************************
 *FUNCTION NAME:getMode
 *FUNCTION     :Return the Mode. Sidle = 0, TX = 1, Rx = 2.
 *INPUT        :none
@@ -449,6 +458,15 @@ bool ELECHOUSE_CC1101::getCC1101() {
 ****************************************************************/
 byte ELECHOUSE_CC1101::getMode() {
   return this->trxstate;
+}
+/****************************************************************
+*FUNCTION NAME:getModulation
+*FUNCTION     :Return the configured modulation. 2-FSK = 0, GFSK = 1, ASK = 2, 4-FSK = 3, MSK = 4.
+*INPUT        :none
+*OUTPUT       :none
+****************************************************************/
+byte ELECHOUSE_CC1101::getModulation() {
+  return this->modulation;
 }
 /****************************************************************
 *FUNCTION NAME:Set Sync_Word

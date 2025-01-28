@@ -200,6 +200,23 @@ class ELECHOUSE_CC1101 {
     byte spiReadReg(byte addr);
     void spiReadBurstReg(byte addr, byte *buffer, byte num);
     byte spiReadStatus(byte addr);
+    void goSleep();
+    void sendData(char *txchar);
+    void sendData(byte *txBuffer, byte size);
+    void sendData(char *txchar, int t);
+    void sendData(byte *txBuffer, byte size, int t);
+    bool checkCRC();
+    bool checkRxFifo(int t);
+    byte checkReceiveFlag();
+    byte receiveData(byte *rxBuffer);
+    // Getters
+    bool getCC1101();
+    float getFrequency();
+    byte getModulation();
+    byte getMode();
+    int getRssi();
+    byte getLqi();
+    // Setters
     void setCCMode(bool s);
     void setModulation(byte m);
     void setPA(int p);
@@ -209,8 +226,6 @@ class ELECHOUSE_CC1101 {
     void setTx(float mhz);
     void setRx(float mhz);
     void setClb(byte b, byte s, byte e);
-    bool getCC1101();
-    byte getMode();
     void setSyncWord(byte sh, byte sl);
     void setAddr(byte v);
     void setPQT(byte v);
@@ -232,18 +247,7 @@ class ELECHOUSE_CC1101 {
     void setRxBW(float f);
     void setDRate(float d);
     void setDeviation(float d);
-    int getRssi();
-    byte getLqi();
     void setSres();
     void setSidle();
-    void goSleep();
-    void sendData(char *txchar);
-    void sendData(byte *txBuffer, byte size);
-    void sendData(char *txchar, int t);
-    void sendData(byte *txBuffer, byte size, int t);
-    bool checkCRC();
-    bool checkRxFifo(int t);
-    byte checkReceiveFlag();
-    byte receiveData(byte *rxBuffer);
 };
 #endif
