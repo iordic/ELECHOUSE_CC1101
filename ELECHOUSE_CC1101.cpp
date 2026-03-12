@@ -340,14 +340,14 @@ void ELECHOUSE_CC1101::setFrequency(float mhz) {
   this->frequency = mhz;
 
   for (bool i = 0; i==0;) {
-    if (mhz >= 26) {
-      mhz-=26;
+    if (mhz >= BASE_FREQ_1) {
+      mhz-=BASE_FREQ_1;
       freq2+=1;
-    } else if (mhz >= 0.1015625) {
-      mhz-=0.1015625;
+    } else if (mhz >= BASE_FREQ_2) {
+      mhz-=BASE_FREQ_2;
       freq1 += 1;
-    } else if (mhz >= 0.00039675) {
-      mhz-=0.00039675;
+    } else if (mhz >= BASE_FREQ_3) {
+      mhz-=BASE_FREQ_3;
       freq0+=1;
     } else {
       i=1;

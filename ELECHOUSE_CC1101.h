@@ -46,6 +46,17 @@ cc1101 Driver for RC Switch. Mod by Little Satan. With permission to modify and 
   #define SS_PIN   10
 #endif
 
+#ifdef USE_XTAL_27MHZ
+  #define BASE_FREQ_1 27.0
+  #define BASE_FREQ_2 0.10546875
+  #define BASE_FREQ_3 0.00041198
+#else
+  // default use xtal 26 MHz
+  #define BASE_FREQ_1 26.0
+  #define BASE_FREQ_2 0.1015625
+  #define BASE_FREQ_3 0.00039675
+#endif
+
 //***************************************CC1101 define**************************************************//
 // CC1101 CONFIG REGSITER
 #define CC1101_IOCFG2       0x00        // GDO2 output pin configuration
